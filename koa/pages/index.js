@@ -1,8 +1,7 @@
-import { render } from "@lit-labs/ssr";
-import { html } from "lit";
+import { render, html } from "wc-ssr-test";
 import "wc-ssr-test/WcSsrTest.js";
 
-export function* renderIndex() {
+export function* renderIndex(name) {
   yield `
     <!doctype html>
     <html>
@@ -23,7 +22,7 @@ export function* renderIndex() {
           }
         </script>
   `;
-  yield* render(html`<wc-ssr-test />`);
+  yield* render(html`<wc-ssr-test header=${name}>${name}</wc-ssr-test>`);
   yield `
       <script type="module">
         // Start fetching the Lit hydration support module (note the absence
@@ -49,7 +48,7 @@ export function* renderIndex() {
         await litHydrateSupportInstalled;
 
         // Import component modules causing them to become interactive
-        import('/node_modules/wc-ssr-test/wc-ssr-test.js');
+        import('/node_modules/wc-ssr-test/WcSsrTest.js');
       </script>
     </body>
     </html>

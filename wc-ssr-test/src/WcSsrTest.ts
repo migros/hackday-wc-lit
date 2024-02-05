@@ -1,27 +1,48 @@
 import { html, css, LitElement } from 'lit';
-import { property } from 'lit/decorators.js';
 
 export class WcSsrTest extends LitElement {
   static styles = css`
-    :host {
-      display: block;
-      padding: 25px;
-      color: var(--wc-ssr-test-text-color, #000);
+    div {
+      border: 1px solid black;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    span {
+      color: rebeccapurple;
+    }
+
+    p {
+      font-family: sans-serif;
     }
   `;
 
-  @property({ type: String }) header = 'Hey there';
+  count = 0;
 
-  @property({ type: Number }) counter = 5;
+  name = 'someone';
 
-  __increment() {
-    this.counter += 1;
-  }
+  static properties = {
+    name: {},
+    count: { type: Number },
+  };
 
   render() {
     return html`
-      <h2>${this.header} Nr. ${this.counter}!</h2>
-      <button @click=${this.__increment}>increment</button>
+      <div>
+        <h1>Hello, <span>${this.name}</span>!</h1>
+        <p>Count: ${this.count}</p>
+        <button
+          @click=${() => {
+            this.count += 1;
+          }}
+        >
+          ++
+        </button>
+      </div>
     `;
   }
 }
+
+customElements.define('wc-ssr-test', WcSsrTest);
