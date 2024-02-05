@@ -12,10 +12,10 @@ npm i wc-ssr-test
 
 ```html
 <script type="module">
-  import 'wc-ssr-test/wc-ssr-test.js';
+  import 'wc-ssr-test/WcSsrTest.js';
 </script>
 
-<wc-ssr-test></wc-ssr-test>
+<wc-ssr-test name="World"></wc-ssr-test>
 ```
 
 ## Linting and formatting
