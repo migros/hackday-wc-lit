@@ -1,0 +1,25 @@
+{
+  "name": "koa",
+  "version": "0.0.0-dev",
+  "description": "Koa Test Server for Lit SSR",
+  "main": "server.ts",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/router": "^12.0.1",
+    "@lit-labs/ssr": "^3.2.2",
+    "@lit-labs/ssr-client": "^1.1.7",
+    "@webcomponents/template-shadowroot": "^0.2.1",
+    "koa": "^2.15.0",
+    "koa-node-resolve": "^1.0.0-pre.9",
+    "koa-static": "^5.0.0",
+    "lit": "^3.1.2",
+    "tslib": "^2.6.2",
+    "wc-ssr-test": "file:../wc-ssr-test/dist/src/"
+  }
+}
