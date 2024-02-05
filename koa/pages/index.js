@@ -6,7 +6,7 @@ export function* renderIndex(name) {
     <!doctype html>
     <html>
       <head>
-        <title>Lit SSR Test Page</title>
+        <title>Lit SSR Test Page with Koa</title>
       </head>
       <style>
         body[dsd-pending] {
@@ -22,7 +22,7 @@ export function* renderIndex(name) {
           }
         </script>
   `;
-  yield* render(html`<wc-ssr-test header=${name}>${name}</wc-ssr-test>`);
+  yield* render(html`<wc-ssr-test name=${name}>${name}</wc-ssr-test>`);
   yield `
       <script type="module">
         // Start fetching the Lit hydration support module (note the absence

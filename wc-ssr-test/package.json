@@ -23,9 +23,12 @@
     "storybook": "tsc && npm run analyze -- --exclude dist && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
     "storybook:build": "tsc && npm run analyze -- --exclude dist && build-storybook"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
-    "@lit-labs/ssr": "3.2.2",
-    "lit": "3.1.2"
+    "@lit-labs/ssr": "^3.2.2",
+    "lit": "^3.1.2"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",
