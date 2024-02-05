@@ -5,14 +5,12 @@ import { SsrTestClient } from ".";
 export const SsrTestServer = async () => {
   const name = "wc-ssr-test";
   const template = html`<wc-ssr-test name=${name}>${name}</wc-ssr-test>`;
-  const out = await collectResult(
-    render(template)
-  );
+  const out = await collectResult(render(template));
   return (
-    <div>
+    <div id="ssr-test-server">
       <h1>SSR Test</h1>
-      <div dangerouslySetInnerHTML={{ __html: out }}></div>
-      <SsrTestClient />
+      
+      <SsrTestClient ssrData={out} />
     </div>
   );
 };
